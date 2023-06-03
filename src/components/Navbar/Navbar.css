@@ -1,0 +1,40 @@
+nav {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+}
+
+nav li {
+    margin-right: 30px;
+    display: flex;
+}
+
+nav ul {
+    display: flex;
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    margin-right: 20px;
+}
+.navbar-divider {
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 2em;
+    background-color: var(--color-link);
+}
+
+.active {
+    text-decoration: underline;
+}
+
+.navBar {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 100;
+}

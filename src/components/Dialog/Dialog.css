@@ -1,0 +1,31 @@
+.title {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.pos {
+  color: "#666666";
+  font-size: 5px;
+  font-weight: normal;
+  font-style: italic;
+  font-weight: 500;
+  /* margin-left: 0.5rem; */
+}
+.pronounciation {
+  vertical-align: middle;
+  color: "#666666";
+  font-size: 1rem;
+  font-weight: normal;
+}
+.main {
+  margin-left: 5rem;
+}
+.extra {
+  /* color: "#666666"; */
+  color: "red";
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+.def {
+  font-size: 1.4rem;
+  color: "red";
+}

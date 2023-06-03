@@ -1,0 +1,16 @@
+.headerText {
+  color: "#808080";
+  font-weight: lighter;
+  font-size: 0.9rem;
+  text-align: center;
+}
+.rankList {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+/* 
+.rankList:hover {
+  font-size: 1.3rem;
+  font-weight: 600;
+} */

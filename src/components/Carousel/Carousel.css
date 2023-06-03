@@ -1,0 +1,29 @@
+.title {
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+.pronounciation {
+  font-size: 0.9rem;
+  color: #808080;
+  margin-left: 0.5rem;
+}
+.pos {
+  font-size: 1.3rem;
+  color: #646262;
+}
+.def {
+  font-size: 1.4rem;
+}
+.defEng {
+  font-size: 1.1rem;
+  font-style: italic;
+}
+.level {
+  font-size: 1rem;
+  color: #646262;
+}
+.volumeIcon:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.2);
+}

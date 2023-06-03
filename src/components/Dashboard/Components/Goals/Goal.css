@@ -1,0 +1,16 @@
+.completeText {
+  color: "#909090";
+  font-size: 0.8rem;
+  font-weight: lighter;
+  margin-top: 0.5rem;
+  text-align: right;
+}
+
+.editIcon:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.2);
+}
+/* .progressBar:hover {
+  transform: scale3d(1.05, 1.05, 1);
+} */
