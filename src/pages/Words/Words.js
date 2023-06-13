@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from "react";
 import SearchIcon from "../../components/SearchIcon/SearchIcon";
-// import { WordToday } from "../../components/Cards/Cards";
+
 import WordToday from "../../components/Carousel/Carousel";
 import { WordCard } from "../../components/Cards/Cards";
 import {
@@ -57,14 +57,14 @@ export function Words() {
   }, []);
 
   return (
-    <div style={{ marginLeft: "5rem", marginTop: "5rem" }}>
+    <div style={{ marginLeft: "5rem", marginTop: "3rem" }}>
       {/* <WordToday></WordToday> */}
       <WordToday sx={{}}></WordToday>
       {/* <h1>Songs</h1> */}
       <h2 style={{ marginTop: "4rem" }}>Bookmarked Words</h2>
       {/* <h1>Missed Words</h1> */}
       {Loading === false && bookMark !== undefined && (
-        <div style={{ display: "flex", gap: "1rem" }}>
+        <div style={{ display: "flex", gap: "1rem", marginBottom: "2rem" }}>
           {bookMark.map((el, i) => {
             return i < 6 && <WordCard wordInfo={el}></WordCard>;
           })}

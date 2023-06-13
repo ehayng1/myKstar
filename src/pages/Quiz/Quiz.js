@@ -10,10 +10,6 @@ import {
   getBookmark,
 } from "../../utils/Firebase/Bookmark/bookmark.firebase";
 export function Quiz() {
-  const [currentPage, setCurrentPage] = useState(0);
-  const [searchedWord, setSearchedWord] = useState();
-  const [addedWords, setAddedWords] = useState([{ baseForm: "단어" }]);
-
   function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -33,6 +29,7 @@ export function Quiz() {
     const init = async () => {
       setbookMark(await getBookmark());
       shuffled = shuffle(bookMark);
+      console.log(bookMark);
     };
     init();
     // console.log(bookMark);
@@ -68,39 +65,49 @@ export function Quiz() {
 
   return (
     <div style={{}}>
-      {bookMark && bookMark.length < 4
-        ? "Please bookmark at least 4 words before taking the quiz!"
-        : stage < bookMark.length &&
-          bookMark &&
-          bookMark.length > 0 && (
-            <div
-              style={{
-                fontSize: "4rem",
-                marginTop: "3rem",
-                marginLeft: "4rem",
-              }}
-            >
-              <h2 style={{ width: "20%", margin: "0px auto" }}>
-                {bookMark[stage].baseForm}
-              </h2>{" "}
-              {/* <div style={{ marginLeft: "5rem" }}>Stage: {stage}</div>
+      {/* {!Array.isArray(bookMark) && !bookMark.length && !bookMark.length < 4
+       */}
+      {bookMark === undefined || bookMark.length < 4 ? (
+        // {bookMark && bookMark.length < 4
+        <div
+          style={{
+            textAlign: "center",
+            marginTop: "40vh",
+            fontSize: "1.5rem",
+            color: "#808080",
+          }}
+        >
+          Please bookmark at least 4 words before taking the quiz!
+        </div>
+      ) : (
+        stage < bookMark.length && (
+          <div
+            style={{
+              fontSize: "4rem",
+              marginTop: "3rem",
+              marginLeft: "4rem",
+            }}
+          >
+            <h2 style={{ width: "20%", margin: "0px auto" }}>
+              {bookMark[stage].baseForm}
+            </h2>{" "}
+            {/* <div style={{ marginLeft: "5rem" }}>Stage: {stage}</div>
           <div style={{ marginLeft: "5rem" }}>Score: {score}</div> */}
-              <div
-                style={{ width: "60%", margin: "0px auto", marginTop: "3rem" }}
-              >
-                <Choices
-                  word={bookMark[stage]}
-                  wordList={bookMark}
-                  handleClick={handleClick}
-                ></Choices>
-              </div>
+            <div
+              style={{ width: "60%", margin: "0px auto", marginTop: "3rem" }}
+            >
+              <Choices
+                word={bookMark[stage]}
+                wordList={bookMark}
+                handleClick={handleClick}
+              ></Choices>
             </div>
-          )}
+          </div>
+        )
+      )}
       {/* <div style={{ marginLeft: "5rem" }}>{ans}</div> */}
-      {stage === bookMark.length && <Result></Result>}
-
+      {stage === bookMark && bookMark.length && <Result></Result>}
       {/* <Choices word={bookMark[0]} wordList={shuffled}></Choices> */}
-
       {/* <div className="options_container">
           {options.map((word, i) => {
             return (

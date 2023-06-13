@@ -25,7 +25,7 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
 
 export default function Goal() {
   return (
-    <div style={{ width: "30%", marginTop: "2rem", padding: "1rem" }}>
+    <div style={{ width: "30%", marginTop: "0rem", padding: "1rem" }}>
       <h3>Goal</h3>
       <div style={{ marginBottom: "2rem" }}>
         <div style={{ display: "flex" }}>

@@ -2,6 +2,7 @@ import React from "react";
 import Carousel from "react-material-ui-carousel";
 import { Paper, Button } from "@mui/material";
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
+import Link from "@mui/material/Link";
 import "./Carousel.css";
 const speak = (word) => {
   const utterance = new SpeechSynthesisUtterance();
@@ -66,7 +67,7 @@ function Item(props) {
         <div className="pronounciation">[{props.item.pronounciation}]</div>
         <VolumeUpIcon
           className="volumeIcon"
-          sx={{ marginLeft: "0.5rem" }}
+          sx={{ marginLeft: "0.5rem", color: "#0052cc" }}
           fontSize="large"
           onClick={() => speak(props.item.name)}
         ></VolumeUpIcon>
@@ -93,10 +94,14 @@ function Item(props) {
           {props.item.level}
         </div>
       </div>
-
-      <Button sx={{ padding: 0 }} className="CheckButton">
-        Full Definition
-      </Button>
+      <Link href={props.item.link} target="_blank">
+        <Button
+          sx={{ padding: 0, textDecoration: "underline" }}
+          className="CheckButton"
+        >
+          Full Definition
+        </Button>
+      </Link>
     </Paper>
   );
 }

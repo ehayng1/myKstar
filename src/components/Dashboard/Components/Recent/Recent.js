@@ -28,7 +28,7 @@ export default function Recent() {
   }, []);
   return (
     <div style={{ width: "70%", marginTop: "0rem", padding: "1rem" }}>
-      <h3>Recently Studied</h3>
+      <h3>Recommended for you </h3>
       <div
         style={{
           display: "flex",
@@ -41,9 +41,10 @@ export default function Recent() {
           return i < 2 && <SongCard key={i} song={song} />;
           // <SongCard song={song}></SongCard>;
         })}
-        {recentWords.map((wordInfo, index) => (
-          <RecentWordCard wordInfo={wordInfo} />
-        ))}
+        {recentWords.map(
+          (wordInfo, index) =>
+            index < 2 && <RecentWordCard wordInfo={wordInfo} />
+        )}
         {/* </div>
       <div style={{ display: "flex", gap: "2rem", flexWrap: "wrap" }}> */}
       </div>
